@@ -3,6 +3,7 @@ require('styles/App.css');
 
 import React from 'react';
 import { ButtonToolbar, Button } from 'react-bootstrap';
+import Foo1Component from './Foo1Component';
 
 let yeomanImage = require('../images/yeoman.png');
 
@@ -26,7 +27,7 @@ class AppComponent extends React.Component {
             { /* Indicates a dangerous or potentially negative action */ } < Button bsStyle = "danger" > Danger < /Button>
 
             { /* Deemphasize a button by making it look like a link while maintaining button behavior */ } < Button bsStyle = "link" > Link < /Button> < /ButtonToolbar>
-
+               <Foo1Component> </Foo1Component>
             < /div>
         );
     }
