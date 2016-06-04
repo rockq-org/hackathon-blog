@@ -14,8 +14,8 @@ import Main from '../components/Main';
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
-    const {actions, items} = this.props;
-    return <Main actions={actions} items={items}/>;
+    const {actions, items, items2} = this.props;
+    return <Main actions={actions} items={items} items2={items2}/>;
   }
 }
 /* Populated by react-webpack-redux:reducer
@@ -25,18 +25,23 @@ class App extends Component {
  */
 App.propTypes = {
   actions: PropTypes.object.isRequired,
-  items: PropTypes.object.isRequired
+  items: PropTypes.object.isRequired,
+  items2: PropTypes.object.isRequired
 };
 function mapStateToProps(state) {
   /* Populated by react-webpack-redux:reducer */
-  const props = { items: state.items };
+  const props = {
+    items: state.items,
+    items2: state.items2
+  };
   return props;
 }
 function mapDispatchToProps(dispatch) {
   /* Populated by react-webpack-redux:action */
   const actions = {
     addItem: require('../actions/items/addItem.js'),
-    delItem: require('../actions/items/delItem.js')
+    delItem: require('../actions/items/delItem.js'),
+    delItem2: require('../actions/items/delItem2.js')
   };
   const actionMap = { actions: bindActionCreators(actions, dispatch) };
   return actionMap;
